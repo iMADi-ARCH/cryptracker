@@ -69,7 +69,7 @@ export default function RootLayout({
                                 href={
                                     "https://github.com/iMADi-ARCH/cryptracker"
                                 }
-                                className="max-w-0 transform -translate-x-full"
+                                className=""
                             >
                                 <FaGithub className="text-5xl" />
                             </Link>
