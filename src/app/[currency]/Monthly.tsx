@@ -3,7 +3,7 @@ import { getMonthly } from "@/lib/utils";
 import PriceTag from "@/components/ui/PriceTag";
 import Loading from "./loading";
 import CustomBarChart from "@/components/ui/CustomBarChart";
-import LimitExceeded from "../../components/ui/LimitExceeded";
+import LimitExceeded from "./LimitExceeded";
 
 interface MonthlyProps {
     params: { currency: string };

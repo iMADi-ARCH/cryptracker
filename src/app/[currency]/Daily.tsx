@@ -3,7 +3,7 @@ import { getDaily } from "@/lib/utils";
 import PriceTag from "@/components/ui/PriceTag";
 import CustomAreaChart from "@/components/ui/CustomAreaChart";
 import Loading from "./loading";
-import LimitExceeded from "../../components/ui/LimitExceeded";
+import LimitExceeded from "./LimitExceeded";
 // import ErrorComponent from "./error";
 
 interface DailyProps {
@@ -43,7 +43,7 @@ const Daily = async ({ params }: DailyProps) => {
                     price={timeSeriesFormatted.at(-1).uv.toLocaleString()}
                 />
             </div>
-            <CustomAreaChart data={timeSeriesFormatted} />
+            <CustomAreaChart data={timeSeriesFormatted} slice={500} />
         </div>
     );
 };

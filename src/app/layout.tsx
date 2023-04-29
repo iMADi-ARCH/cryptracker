@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { MdChevronLeft } from "react-icons/md";
+import { FaGithub } from "react-icons/fa";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -58,11 +59,21 @@ export default function RootLayout({
             lang="en"
         >
             <body className={`w-full h-full ${inter.className}`}>
-                <main className="w-full h-full relative max-w-5xl mx-auto p-5 flex flex-col items-center">
+                <main className="w-full h-full relative max-w-7xl mx-auto p-5 flex flex-col items-center">
                     <div className="w-full flex flex-col gap-5 mb-5">
-                        <h1 className="relative text-6xl text-center font-thin">
-                            Cryptracker
-                        </h1>
+                        <div className="w-full flex items-center">
+                            <h1 className="flex-1 text-6xl text-center font-thin">
+                                Cryptracker
+                            </h1>
+                            <Link
+                                href={
+                                    "https://github.com/iMADi-ARCH/cryptracker"
+                                }
+                                className="max-w-0 transform -translate-x-full"
+                            >
+                                <FaGithub className="text-5xl" />
+                            </Link>
+                        </div>
                         <hr className="w-full border-zinc-700" />
                     </div>
                     {children}
