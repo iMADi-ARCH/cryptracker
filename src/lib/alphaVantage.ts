@@ -3,6 +3,8 @@ import alpha from "alphavantage";
 const KEY = process.env.ALPHA_KEY;
 // let alphaVantage;
 if (!KEY) {
+    console.log(KEY);
+
     throw new Error("Me: No ALPHA_KEY Key set.");
 }
 
