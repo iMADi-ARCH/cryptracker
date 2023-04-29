@@ -155,6 +155,7 @@ export const getDigitalCurrencyName = async (slug: string) => {
     const currs = await getDigitalCurrencies();
     // let name = "";
     const cur = currs.filter((cur) => cur.slug === slug)[0];
+    if (!cur) return null;
     return cur.name;
 };
 

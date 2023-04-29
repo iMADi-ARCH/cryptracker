@@ -54,7 +54,7 @@ export default function RootLayout({
 }) {
     return (
         <html
-            className="scroll-smooth w-full h-fit bg-gradient-to-tr to-zinc-800 from-zinc-900 text-zinc-50 overflow-x-hidden bg-cover"
+            className="scroll-smooth w-full h-fit min-h-screen bg-gradient-to-tr to-zinc-800 from-zinc-900 text-zinc-50 overflow-x-hidden bg-cover"
             lang="en"
         >
             <body className={`w-full h-full ${inter.className}`}>
