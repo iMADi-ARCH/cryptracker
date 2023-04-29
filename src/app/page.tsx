@@ -1,8 +1,9 @@
-import Image from "next/image";
-import alphaVantage from "@/lib/alphaVantage";
 import { getDigitalCurrencies } from "@/lib/utils";
-import Link from "next/link";
 import CurrencyCard from "@/components/ui/CurrencyCard";
+import Daily from "./[currency]/Daily";
+import { Suspense } from "react";
+import Loading from "./[currency]/loading";
+import FeaturedCurrency from "./FeaturedCurrency";
 
 export default async function Home() {
     // const dat = await alphaVantage.crypto.daily("BTC", "USD");
@@ -10,10 +11,13 @@ export default async function Home() {
     const currs = await getDigitalCurrencies();
 
     return (
-        <div className="flex flex-wrap gap-3 justify-center">
-            {currs.map((cur) => (
-                <CurrencyCard key={cur.slug} cur={cur} />
-            ))}
+        <div className="flex flex-col gap-5">
+            <FeaturedCurrency currency="btc" name="Bitcoin" />
+            <div className="flex flex-wrap gap-3 justify-center">
+                {currs.map((cur) => (
+                    <CurrencyCard key={cur.slug} cur={cur} />
+                ))}
+            </div>
         </div>
     );
 }
