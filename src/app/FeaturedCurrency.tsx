@@ -3,6 +3,7 @@ import Loading from "./[currency]/loading";
 import Daily from "./[currency]/Daily";
 import Image from "next/image";
 import { getDigitalCurrencyIconUrl } from "@/lib/utils";
+import Link from "next/link";
 
 interface FeaturedCurrencyProps {
     currency: string;
@@ -20,7 +21,9 @@ const FeaturedCurrency: FC<FeaturedCurrencyProps> = ({ currency, name }) => {
                     width={48}
                     height={48}
                 />
-                <h1 className="text-center text-4xl">Trending: {name}</h1>
+                <Link href={`/${currency}`}>
+                    <h1 className="text-center text-4xl">Trending: {name}</h1>
+                </Link>
             </div>
             <Suspense fallback={<Loading params={{ currency: "btc" }} />}>
                 {/* @ts-expect-error Idk */}

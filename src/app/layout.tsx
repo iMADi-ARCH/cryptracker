@@ -5,9 +5,46 @@ import { MdChevronLeft } from "react-icons/md";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const title = "Cryptracker — Track Digital Currency prices easily";
+const description =
+    "Looking to easily track digital currency prices? Check out Cryptracker! Our web app displays daily, weekly, and monthly prices for a variety of digital currencies including Bitcoin and Ethereum. Stay up-to-date and informed with Cryptracker.";
+const url = "https://cryptracker-dun.vercel.app/";
+const images = [
+    {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 628,
+    },
+];
+
 export const metadata = {
-    title: "Cryptracker",
-    description: "A price tracker for digital currencies.",
+    title: title,
+    description: description,
+    generator: "Next.js",
+    applicationName: "Cryptracker",
+    referrer: "origin-when-cross-origin",
+    keywords: ["Next.js", "React", "JavaScript", "Crypto", "Digital Currency"],
+    authors: [{ name: "Aditya Nandan" }],
+    colorScheme: "dark",
+    creator: "Aditya Nandan",
+    publisher: "Aditya Nandan",
+    category: "technology",
+    openGraph: {
+        type: "website",
+        url: url,
+        title: title,
+        description: description,
+        images: images,
+    },
+    twitter: {
+        card: "summary_large_image",
+        site: url,
+        title: title,
+        description: description,
+        images: images,
+        creator: "@iMADi",
+        creatorId: "69235681",
+    },
 };
 
 export default function RootLayout({
