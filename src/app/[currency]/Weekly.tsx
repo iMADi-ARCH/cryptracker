@@ -45,7 +45,11 @@ const Weekly = async ({ params }: WeeklyProps) => {
                 <span className="text-sm">This week&rsquo;s Price:</span>
                 {price ? <PriceTag price={price.uv.toLocaleString()} /> : null}
             </div>
-            <CustomAreaChart data={timeSeriesFormatted} slice={50} />
+            <CustomAreaChart
+                aspect={1.5}
+                data={timeSeriesFormatted}
+                slice={50}
+            />
         </div>
     );
 };

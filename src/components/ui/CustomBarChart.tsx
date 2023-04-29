@@ -16,16 +16,22 @@ import { CategoricalChartProps } from "recharts/types/chart/generateCategoricalC
 interface BarChartProps extends CategoricalChartProps {
     // data: { name: string; uv: number }[];
     slice?: number;
+    aspect?: number;
 }
 
-const CustomBarChart: FC<BarChartProps> = ({ data, slice = 100, ...props }) => {
+const CustomBarChart: FC<BarChartProps> = ({
+    data,
+    slice = 100,
+    aspect = 2.25,
+    ...props
+}) => {
     if (!data) {
         return null;
     }
 
     return (
         <div className="w-full h-full flex">
-            <ResponsiveContainer aspect={1.5} width="100%" height="100%">
+            <ResponsiveContainer aspect={aspect} width="100%" height="100%">
                 <BarChart
                     data={data}
                     margin={{ top: 0, right: 0, bottom: 0, left: 0 }}

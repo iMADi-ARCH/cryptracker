@@ -15,18 +15,20 @@ import { CategoricalChartProps } from "recharts/types/chart/generateCategoricalC
 
 interface AreaChartProps extends CategoricalChartProps {
     slice?: number;
+    aspect?: number;
 }
 
 const CustomAreaChart: FC<AreaChartProps> = ({
     data,
     slice = 100,
+    aspect = 2.25,
     ...props
 }) => {
     if (!data) return null;
 
     return (
         <div className="w-full h-full flex">
-            <ResponsiveContainer aspect={2.25} width="100%" height="100%">
+            <ResponsiveContainer aspect={aspect} width="100%" height="100%">
                 <AreaChart
                     data={data}
                     // margin={{ top: 0, right: 0, bottom: 0, left: 0 }}

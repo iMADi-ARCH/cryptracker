@@ -44,7 +44,11 @@ const Monthly = async ({ params }: MonthlyProps) => {
                 <span className="text-sm">This month&rsquo;s Price:</span>
                 {price ? <PriceTag price={price.uv.toLocaleString()} /> : null}
             </div>
-            <CustomBarChart data={timeSeriesFormatted} slice={20} />
+            <CustomBarChart
+                aspect={1.5}
+                data={timeSeriesFormatted}
+                slice={20}
+            />
         </div>
     );
 };
