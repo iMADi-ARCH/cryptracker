@@ -1,5 +1,4 @@
 "use client";
-import Spinner from "@/components/ui/Spinner";
 import { FC } from "react";
 import { MdLoop } from "react-icons/md";
 

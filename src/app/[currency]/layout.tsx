@@ -6,8 +6,6 @@ import {
 } from "@/lib/serverUtils";
 import Image from "next/image";
 import Link from "next/link";
-// import { notFound } from "next/navigation";
-import { FC } from "react";
 import { MdChevronLeft } from "react-icons/md";
 import NotFound from "./not-found";
 

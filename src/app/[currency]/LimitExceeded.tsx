@@ -20,8 +20,6 @@ const LimitExceeded: FC<LimitExceededProps> = ({}) => {
                     >
                         Retry <MdRefresh />
                     </Button>
-                    {/* <MdLoop className="animate-spin -scale-100" /> */}
-                    {/* <Spinner /> */}
                 </div>
             </div>
         </div>

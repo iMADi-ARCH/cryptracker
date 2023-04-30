@@ -1,13 +1,8 @@
 import { getDigitalCurrencies } from "@/lib/serverUtils";
 import CurrencyCard from "@/components/ui/CurrencyCard";
-import Daily from "./[currency]/Daily";
-import { Suspense } from "react";
-import Loading from "./[currency]/loading";
 import FeaturedCurrency from "./FeaturedCurrency";
 
 export default async function Home() {
-    // const dat = await alphaVantage.crypto.daily("BTC", "USD");
-    // console.log(dat);
     const currs = await getDigitalCurrencies();
 
     return (

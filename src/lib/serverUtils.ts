@@ -123,7 +123,6 @@ export const getMonthly = cache(async (currency: string) => {
 });
 
 export const getDaily = cache(async (currency: string) => {
-    // const data = await alphaVantage.crypto.daily(currency, "USD");
     const data = await getData(currency);
     const error = data["Error Message"] || null;
     const note = data["Note"];
@@ -131,7 +130,7 @@ export const getDaily = cache(async (currency: string) => {
     if (error || note) {
         return { error, note };
     }
-    // const meta = data["Meta Data"];
+
     const meta = { lastRefreshed: data["Meta Data"]["6. Last Refreshed"] };
     const timeSeries = data["Time Series (Digital Currency Daily)"];
     const timeSeriesFormatted =

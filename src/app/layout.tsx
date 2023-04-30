@@ -1,7 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { MdChevronLeft } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 
 const inter = Inter({ subsets: ["latin"] });
