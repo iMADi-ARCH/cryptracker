@@ -1,5 +1,3 @@
-import Papa from "papaparse";
-import alphaVantage from "./alphaVantage";
 import { cache } from "react";
 
 const getDigitalCurrencies = async () => {
@@ -30,7 +28,18 @@ const getDigitalCurrencies = async () => {
 
 export const getData = cache(async (currency: string) => {
     console.log("Getting data...");
-    const data = await alphaVantage.crypto.daily(currency, "USD");
+    let KEY = process.env.ALPHA_KEY;
+
+    if (!KEY) {
+        console.log(KEY);
+        throw new Error("No ALPHA_KEY Key set.");
+    }
+
+    const res = await fetch(
+        `https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=${currency}&market=USD&apikey=${KEY}`,
+        { next: { revalidate: 600 } }
+    );
+    const data = res.json();
     return data;
 });
 

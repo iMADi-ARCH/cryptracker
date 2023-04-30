@@ -8,7 +8,7 @@ interface DailyProps {
     params: { currency: string };
 }
 
-export const revalidate = 86400;
+// export const revalidate = 86400;
 
 const Daily = async ({ params }: DailyProps) => {
     let { meta, timeSeriesFormatted, error } = await getDaily(params.currency);

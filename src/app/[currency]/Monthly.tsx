@@ -8,7 +8,7 @@ interface MonthlyProps {
     params: { currency: string };
 }
 
-export const revalidate = 2592000;
+// export const revalidate = 2592000;
 
 const Monthly = async ({ params }: MonthlyProps) => {
     const { meta, timeSeriesFormatted, error } = await getMonthly(

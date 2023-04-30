@@ -14,6 +14,8 @@ interface layoutProps {
     params: { currency: string };
 }
 
+export const revalidate = 600; // 10 minutes
+
 const Layout = async ({ params, children }: layoutProps) => {
     const curName = await getDigitalCurrencyName(params.currency);
     if (!curName) {

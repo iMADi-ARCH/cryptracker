@@ -8,7 +8,7 @@ interface WeeklyProps {
     params: { currency: string };
 }
 
-export const revalidate = 604800;
+// export const revalidate = 604800;
 
 const Weekly = async ({ params }: WeeklyProps) => {
     const { meta, timeSeriesFormatted, error } = await getWeekly(
