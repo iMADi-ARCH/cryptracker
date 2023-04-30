@@ -37,7 +37,9 @@ const Layout = async ({ params, children }: layoutProps) => {
                 />
                 <h1 className="text-center text-4xl">{curName}</h1>
             </div>
-            {children}
+            <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-5">
+                {children}
+            </div>
             <h2 className="text-center text-3xl mt-10">Other Currencies</h2>
             <div className="flex flex-wrap gap-3 justify-center">
                 {currs.map((cur) => (

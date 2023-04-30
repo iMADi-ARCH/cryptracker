@@ -1,9 +1,9 @@
 import { FC, Suspense } from "react";
-import Loading from "./[currency]/loading";
 import Daily from "./[currency]/Daily";
 import Image from "next/image";
 import { getDigitalCurrencyIconUrl } from "@/lib/serverUtils";
 import Link from "next/link";
+import GraphLoading from "@/components/loading/Graph";
 
 interface FeaturedCurrencyProps {
     currency: string;
@@ -25,7 +25,7 @@ const FeaturedCurrency: FC<FeaturedCurrencyProps> = ({ currency, name }) => {
                     <h1 className="text-center text-4xl">Trending: {name}</h1>
                 </Link>
             </div>
-            <Suspense fallback={<Loading params={{ currency: "btc" }} />}>
+            <Suspense fallback={<GraphLoading params={{ currency: "btc" }} />}>
                 {/* @ts-expect-error Idk */}
                 <Daily params={{ currency: "btc" }} />
             </Suspense>
