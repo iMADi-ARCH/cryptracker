@@ -17,7 +17,6 @@ const getDigitalCurrencies = async () => {
         etc: "Ethereum Classic",
         ltc: "Lite Coin",
         ada: "Cardano",
-        bnb: "Binance",
         xmr: "Monero",
         xrp: "Ripple",
         bch: "Bitcoin-Cash",
@@ -40,11 +39,10 @@ export const getData = cache(async (currency: string) => {
         console.log(KEY);
         throw new Error("No ALPHA_KEY Key set.");
     }
+    const url = `https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=${currency}&market=USD&apikey=${KEY}`;
+    const res = await fetch(url, { next: { revalidate: 600 } });
+    console.log(url);
 
-    const res = await fetch(
-        `https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=${currency}&market=USD&apikey=${KEY}`,
-        { next: { revalidate: 600 } }
-    );
     const data = res.json();
     return data;
 });
