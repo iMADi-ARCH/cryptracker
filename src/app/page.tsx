@@ -11,7 +11,7 @@ export default async function Home() {
     const currs = await getDigitalCurrencies();
 
     return (
-        <div className="flex flex-col gap-5">
+        <div className="w-full flex flex-col gap-5">
             <FeaturedCurrency currency="btc" name="Bitcoin" />
             <div className="flex flex-wrap gap-3 justify-center">
                 {currs.map((cur) => (

@@ -12,7 +12,7 @@ interface FeaturedCurrencyProps {
 
 const FeaturedCurrency: FC<FeaturedCurrencyProps> = ({ currency, name }) => {
     return (
-        <div>
+        <div className="w-full">
             <div className="flex gap-3 my-3 items-center">
                 <Image
                     src={getDigitalCurrencyIconUrl(currency)}
