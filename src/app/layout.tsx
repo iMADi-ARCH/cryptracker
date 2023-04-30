@@ -1,7 +1,8 @@
+import Socials from "@/components/ui/Socials";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
+import { FaBitcoin, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,17 +62,37 @@ export default function RootLayout({
                 <main className="w-full h-full relative max-w-7xl mx-auto p-5 flex flex-col items-center">
                     <div className="w-full flex flex-col gap-5 mb-5">
                         <div className="w-full flex items-center">
-                            <h1 className="flex-1 text-6xl text-center font-thin">
+                            <h1 className="flex gap-5 flex-1 text-6xl font-bold">
+                                <FaBitcoin />
                                 Cryptracker
                             </h1>
-                            <Link
+                            <Socials
+                                socials={[
+                                    {
+                                        name: "Linkedin",
+                                        href: "https://www.linkedin.com/in/aditya-nandan-thats-it/",
+                                        icon: <FaLinkedin />,
+                                    },
+                                    {
+                                        name: "Twitter",
+                                        href: "https://twitter.com/iMADi69235681",
+                                        icon: <FaTwitter />,
+                                    },
+                                    {
+                                        name: "Github",
+                                        href: "https://github.com/iMADi-ARCH/cryptracker",
+                                        icon: <FaGithub />,
+                                    },
+                                ]}
+                            />
+                            {/* <Link
                                 href={
                                     "https://github.com/iMADi-ARCH/cryptracker"
                                 }
                                 className=""
                             >
                                 <FaGithub className="text-5xl" />
-                            </Link>
+                            </Link> */}
                         </div>
                         <hr className="w-full border-zinc-700" />
                     </div>

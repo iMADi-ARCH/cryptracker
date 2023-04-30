@@ -25,9 +25,9 @@ const Layout = async ({ params, children }: layoutProps) => {
     const currs = await getDigitalCurrencies();
     return (
         <div className="w-full h-full flex flex-col gap-5 py-10">
-            <Link href={"/"} className="absolute top-0 left-0 p-5 text-6xl">
+            {/* <Link href={"/"} className="absolute top-0 left-0 p-5 text-6xl">
                 <MdChevronLeft />
-            </Link>
+            </Link> */}
             <div className="flex gap-3 my-3 items-center">
                 <Image
                     src={getDigitalCurrencyIconUrl(params.currency)}
