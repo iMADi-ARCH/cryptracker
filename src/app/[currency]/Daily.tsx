@@ -2,9 +2,7 @@ import { notFound } from "next/navigation";
 import { getDaily } from "@/lib/utils";
 import PriceTag from "@/components/ui/PriceTag";
 import CustomAreaChart from "@/components/ui/CustomAreaChart";
-import Loading from "./loading";
 import LimitExceeded from "./LimitExceeded";
-// import ErrorComponent from "./error";
 
 interface DailyProps {
     params: { currency: string };
