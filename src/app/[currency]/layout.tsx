@@ -6,8 +6,9 @@ import {
 } from "@/lib/serverUtils";
 import Image from "next/image";
 import Link from "next/link";
-import { MdChevronLeft } from "react-icons/md";
+import { MdChevronLeft, MdVisibility } from "react-icons/md";
 import NotFound from "./not-found";
+import Button from "@/components/ui/Button";
 
 interface layoutProps {
     children: React.ReactNode;
@@ -23,7 +24,7 @@ const Layout = async ({ params, children }: layoutProps) => {
     }
     const currs = await getDigitalCurrencies();
     return (
-        <div className="w-full h-full flex flex-col gap-5">
+        <div className="w-full h-full flex flex-col gap-5 py-10">
             <Link href={"/"} className="absolute top-0 left-0 p-5 text-6xl">
                 <MdChevronLeft />
             </Link>
@@ -42,10 +43,15 @@ const Layout = async ({ params, children }: layoutProps) => {
             </div>
             <h2 className="text-center text-3xl mt-10">Other Currencies</h2>
             <div className="flex flex-wrap gap-3 justify-center">
-                {currs.map((cur) => (
+                {currs.slice(0, 3).map((cur) => (
                     <CurrencyCard key={cur.slug} cur={cur} />
                 ))}
             </div>
+            <Link className="self-center" href={"/"}>
+                <Button>
+                    See All <MdVisibility />
+                </Button>
+            </Link>
         </div>
     );
 };

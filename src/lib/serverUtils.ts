@@ -14,9 +14,15 @@ const getDigitalCurrencies = async () => {
         btc: "Bitcoin",
         eth: "Ethereum",
         doge: "Doge Coin",
-        // dope: "Dope Coin",
         etc: "Ethereum Classic",
         ltc: "Lite Coin",
+        ada: "Cardano",
+        bnb: "Binance",
+        xmr: "Monero",
+        xrp: "Ripple",
+        bch: "Bitcoin-Cash",
+        sol: "Solana",
+        dot: "Polkadot",
     };
 
     const currsList = Object.entries(currs).map(([slug, name]) => ({
@@ -164,7 +170,7 @@ export const getDigitalCurrencyName = async (slug: string) => {
 };
 
 export const getDigitalCurrencyIconUrl = (slug: string) => {
-    return `https://coinicons-api.vercel.app/api/icon/${slug}`;
+    return `https://coinicons-api.vercel.app/api/icon/${slug.toLowerCase()}`;
 };
 
 export { getDigitalCurrencies };
