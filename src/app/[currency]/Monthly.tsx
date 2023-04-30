@@ -46,7 +46,7 @@ const Monthly = async ({ params }: MonthlyProps) => {
             <CustomBarChart
                 aspect={1.5}
                 data={timeSeriesFormatted}
-                slice={20}
+                slice={Math.floor(timeSeriesFormatted.length / 2)}
             />
         </div>
     );

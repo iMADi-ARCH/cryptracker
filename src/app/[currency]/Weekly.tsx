@@ -46,7 +46,7 @@ const Weekly = async ({ params }: WeeklyProps) => {
             <CustomAreaChart
                 aspect={1.5}
                 data={timeSeriesFormatted}
-                slice={50}
+                slice={Math.floor(timeSeriesFormatted.length / 2)}
             />
         </div>
     );

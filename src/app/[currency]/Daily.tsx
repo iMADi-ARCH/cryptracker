@@ -41,7 +41,10 @@ const Daily = async ({ params }: DailyProps) => {
                     price={timeSeriesFormatted.at(-1).uv.toLocaleString()}
                 />
             </div>
-            <CustomAreaChart data={timeSeriesFormatted} slice={500} />
+            <CustomAreaChart
+                data={timeSeriesFormatted}
+                slice={Math.floor(timeSeriesFormatted.length / 2)}
+            />
         </div>
     );
 };
