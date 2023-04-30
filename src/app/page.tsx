@@ -1,4 +1,4 @@
-import { getDigitalCurrencies } from "@/lib/utils";
+import { getDigitalCurrencies } from "@/lib/serverUtils";
 import CurrencyCard from "@/components/ui/CurrencyCard";
 import Daily from "./[currency]/Daily";
 import { Suspense } from "react";

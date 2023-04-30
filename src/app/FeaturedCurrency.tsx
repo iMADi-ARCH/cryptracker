@@ -2,7 +2,7 @@ import { FC, Suspense } from "react";
 import Loading from "./[currency]/loading";
 import Daily from "./[currency]/Daily";
 import Image from "next/image";
-import { getDigitalCurrencyIconUrl } from "@/lib/utils";
+import { getDigitalCurrencyIconUrl } from "@/lib/serverUtils";
 import Link from "next/link";
 
 interface FeaturedCurrencyProps {

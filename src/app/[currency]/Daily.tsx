@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getDaily } from "@/lib/utils";
+import { getDaily } from "@/lib/serverUtils";
 import PriceTag from "@/components/ui/PriceTag";
 import CustomAreaChart from "@/components/ui/CustomAreaChart";
 import LimitExceeded from "./LimitExceeded";

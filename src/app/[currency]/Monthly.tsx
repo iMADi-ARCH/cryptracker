@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getMonthly } from "@/lib/utils";
+import { getMonthly } from "@/lib/fetchUtils";
 import PriceTag from "@/components/ui/PriceTag";
 import Loading from "./loading";
 import CustomBarChart from "@/components/ui/CustomBarChart";
