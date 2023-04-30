@@ -16,12 +16,16 @@ import { CategoricalChartProps } from "recharts/types/chart/generateCategoricalC
 interface AreaChartProps extends CategoricalChartProps {
     slice?: number;
     aspect?: number;
+    tooltip?: boolean;
+    brush?: boolean;
 }
 
 const CustomAreaChart: FC<AreaChartProps> = ({
     data,
     slice = 100,
     aspect = 2.25,
+    tooltip = true,
+    brush = true,
     ...props
 }) => {
     if (!data) return null;
@@ -68,18 +72,20 @@ const CustomAreaChart: FC<AreaChartProps> = ({
                     />
                     <XAxis dataKey="name" />
                     <YAxis className="pr-10" />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Brush
-                        className="fill-zinc-800"
-                        dataKey={"name"}
-                        // x={0}
-                        // y={0}
-                        // width={100}
-                        // startIndex={data.length - slice}
-                        startIndex={Math.max(data.length - slice, 0)}
-                    >
-                        <rect className="fill-zinc-800" />
-                    </Brush>
+                    {tooltip ? <Tooltip content={<CustomTooltip />} /> : null}
+                    {brush ? (
+                        <Brush
+                            className="fill-zinc-800"
+                            dataKey={"name"}
+                            // x={0}
+                            // y={0}
+                            // width={100}
+                            // startIndex={data.length - slice}
+                            startIndex={Math.max(data.length - slice, 0)}
+                        >
+                            <rect className="fill-zinc-800" />
+                        </Brush>
+                    ) : null}
                 </AreaChart>
             </ResponsiveContainer>
         </div>

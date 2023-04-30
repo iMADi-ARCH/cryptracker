@@ -16,15 +16,18 @@ const Page = async ({ params }: PageProps) => {
                     {/* @ts-expect-error Idk */}
                     <Daily params={params} />
                 </Suspense>
+                {/* <GraphLoading params={params} /> */}
             </div>
             <Suspense fallback={<GraphLoading params={params} />}>
                 {/* @ts-expect-error Idk */}
                 <Weekly params={params} />
             </Suspense>
+            {/* <GraphLoading params={params} /> */}
             <Suspense fallback={<GraphLoading params={params} />}>
                 {/* @ts-expect-error Idk */}
                 <Monthly params={params} />
             </Suspense>
+            {/* <GraphLoading params={params} /> */}
         </>
     );
 };
